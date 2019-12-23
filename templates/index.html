@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/holo.css') }}">
+
+<script type="text/javascript">
+    function changeClass() {
+        if (document.getElementById("txtSuggestion").value != "") {
+            if (document.getElementById("btnSubmit").value == "Submit your shitty idea") {
+                document.getElementById("btnSubmit").className = 'submitButtonClicked';
+                document.getElementById("btnSubmit").value = "Too bad, idgaf";
+                document.getElementById("txtSuggestion").disabled = true;
+            }
+            else if (document.getElementById("btnSubmit").value == "Too bad, idgaf") {
+                document.getElementById("btnSubmit").className = 'submitButton';
+                document.getElementById("btnSubmit").value = "Submit your shitty idea";
+                document.getElementById("txtSuggestion").focus();
+                document.getElementById("txtSuggestion").value = '';
+                document.getElementById("txtSuggestion").disabled = false;
+                document.getElementById("txtSuggestion").focus()
+            }
+            else {
+                document.getElementById("btnSubmit").value = "EVERYTHING IS BROKEN, ABANDON SHIP";
+            }
+        }
+    }
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="navheader">
+    <div class="navheader-contents">
+        <ul class="horizontal-list">
+            <script type="text/javascript">
+                var links = {
+                    "discord": null,
+                    "lemmy": null,
+                    "skyrim": null,
+                    "halbrd.com": "https://halbrd.com",
+                    "will.sx": "https://will.sx"
+                };
+
+                for (var key in links) {
+                    document.write("<li><a href='" + (links[key] == null ? key : links[key]) + "'>" + key + "</a></li>");
+                }
+            </script>
+        </ul>
+    </div>
+</div>
+<div id="title">
+    lynq.me
+</div>
+<div id="subtext">
+    #holoyolo
+</div>
+<div id="mainFixed" style="display: none;">
+    <input type="text" class="textbox" id="txtSuggestion" placeholder="Suggest a use for this domain"
+        maxlength="500"></input><input type="button" class="submitButton" value="Submit your shitty idea"
+        id="btnSubmit" onclick="changeClass()"></input>
+</div>
+{% endblock %}
