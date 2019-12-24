@@ -1,6 +1,10 @@
 from flask import Flask, render_template
 
+from views.lemmy import lemmy
+
 app = Flask(__name__)
+
+app.register_blueprint(lemmy)
 
 @app.route('/')
 def index():
