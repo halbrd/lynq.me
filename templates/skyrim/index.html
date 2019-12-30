@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>How To Into Skyrim Modding</title>
+		<meta charset="UTF-8">
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+		<link href="{{ url_for('static', filename='skyrim_files/css.css') }}" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='skyrim_files/holo.css') }}">
+		<style type="text/css">
+			body {
+				color: #F5F5F5;
+				background-color: #303030;
+				margin-left: 100px;
+				margin-right: 100px;
+				/*background: url(letsrollcrop.png) no-repeat center center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;*/
+			}
+			a {
+				font-size: 16px;
+				text-decoration: underline;
+			}
+			a:link {
+				color: #2196F3;
+			}
+			a:visited {
+				color: #2196F3;
+			}
+			a:hover {
+				color: #90CAF9;
+			}
+			a:active {
+				color: #1976D2;
+			}
+			.pictureFrame {
+				width: 750px;
+				margin: 75px auto;
+				text-align: center;
+			}
+			.pictureFrameCollapsed {
+				visibility: hidden;
+				height: 0px;
+				margin: 0px;
+			}
+			i {
+				width: 100px;
+			}
+			img {
+				height: 400px;
+				margin-bottom: 15px;
+				box-shadow: 0px 0px 20px #000000;
+			}
+			li {
+				margin-bottom: 5px;
+			}
+			#titleGroup {
+				text-align: center;
+			}
+			#title {
+				font-size: 42px;
+				margin-bottom: 10px;
+			}
+			#subtitle {
+				font-size: 28px;
+				margin-bottom: 35px;
+			}
+		</style>
+		<script type="text/javascript">
+			function collapseImages()
+			{
+				var elementArray;
+	    		elementArray = document.getElementsByClassName("pictureFrame");
+	    		if (elementArray.length > 0)
+	    		{
+		    		for (var i = (elementArray.length - 1); i >= 0; i--)
+		    		{
+		    			elementArray[i].className = "pictureFrameCollapsed";
+		    		}
+		    		document.getElementById("toggleImgs").innerText = "Enable memes";
+		    	}
+	    		else
+	    		{
+		    		elementArray = document.getElementsByClassName("pictureFrameCollapsed");
+		    		for (var i = (elementArray.length - 1); i >= 0; i--)
+		    		{
+		    			elementArray[i].className = "pictureFrame";
+		    		}
+		    		document.getElementById("toggleImgs").innerText = "Disable memes";
+	    		}
+			}
+		</script>
+	</head>
+	<body>
+		<div style="position: fixed; top: 5px; right: 5px;">
+			<button id="toggleImgs" onclick="collapseImages()" style="width: 120px">Disable memes</button>
+		</div>
+		<div style="float: right; margin-right: 35px;">
+			Disable images for compact reading with this button ⇒
+		</div>
+		<br>
+		<br>
+		<div id="titleGroup">
+			<div id="title">How To Into Skyrim Modding</div>
+			<div id="subtitle">A regrettably informative guide to staying up until 4am</div>
+		</div>
+
+		<h1>Foreword and general tips</h1>
+		<ul>
+			<li>Never use the Steam Workshop.</li>
+			<li><strong>NEVER</strong> use the Steam Workshop.</li>
+			<li>If a mod that you want is only on the Steam Workshop, subscribe
+to it, wait for the files to get downloaded, copy them to somewhere else
+ (deleting the originals), unsubscribe from the Steam Workshop mod, zip
+the copied files, and install the zip as a mod in Mod Organizer.</li>
+			<li>Test your game as you go - especially when installing mods en
+masse. Test your game for stability and FPS at least every 5 new mods,
+and test every mod specifically to make sure it's working.</li>
+			<li>Bethesda games running on the GameBryo engine (ie. Fallouts +
+Skyrim) have a mod limit of 256 "plugins" (.esp files; most of the time
+each mod will have 1, but can have 0 or &gt;1), meaning that you can
+only have roughly 256 mods active at a time. This may seem like a lot
+but hoooo boy does it creep up on you.</li>
+			<li>Read the description and installation instructions for every mod
+you install. They often contain very important information about the
+mod.</li>
+			<li>Don't expect to get everything done in one day. It'll take a good
+ while to get your basic loadout set up and running. Keep going! The
+result is worth it.</li>
+			<li>One problem with which you will become familiar is the famous
+just-before-main-menu crash. This is almost always due to an installed
+mod missing a dependency (a different mod that the first mod needs to
+have installed to work). To find out what's missing, click the
+triangle-with-exclamation-mark button at the top right of Mod Organizer,
+ then click Missing Masters to see a list of missing dependencies.</li>
+			<li>Lots of mods use a special Mod Configuration Menu (MCM) for
+configuration options, found in the Pause menu. It's part of SkyUI,
+meaning that without SkyUI, you can't access the configuration options
+for many mods, one of the countless reasons why SkyUI is necessary for
+any loadout.</li>
+			<li>You will find familiarity with the basics of the console to be a
+very useful skill, though you can probably get by without it. A full
+reference of Skyrim's console commands can be found <a href="https://www.uesp.net/wiki/Skyrim:Console">here</a>. Make sure you at least take a look at the <code>help</code> command.</li>
+			<li>During your travels through Skyrimmoddingdom, you will come
+across a lot of sexually suggestive screenshots for seemingly no reason,
+ even in mods that have little to no sexual content or applications, and
+ especially in ones that do. Every Skyrim mod showcase on Youtube has an
+ extremely scantily clad girl in the thumbnail. These are facts of life.</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/letsrolltight.png') }}"><br>
+			<i>// DRAUGR ASSAULT IN PROGRESS //</i>
+		</div>
+
+		<h1>Getting started</h1>
+		<ol>
+			<li>Install Skyrim and all DLC that you own on Steam. If you've got
+plenty of extra space, installing it on an SSD will help with load times
+ immensely.</li>
+			<li>Install SKSE on <a href="https://store.steampowered.com/app/365720">Steam</a>
+ (I haven't tested the Steam installer extensively, so hopefully it will
+ work as intended, otherwise Google to find out how to install it
+manually).</li>
+			<li>Make an account on <a href="https://www.nexusmods.com/games/?">Nexus Mods</a>.</li>
+			<li>Download and install <a href="https://www.nexusmods.com/skyrim/mods/1334/?">Mod Organizer</a> (better alternative to Nexus Mod Manager). Again, if you've got extra SSD space, stick it on there.</li>
+			<li>Start Mod Organizer and make sure that it finds your Skyrim installation.</li>
+			<li>Log into your Nexus Mods account from Mod Organizer.</li>
+			<li>Download your first mod: <a href="https://www.nexusmods.com/skyrim/mods/3863/?">SkyUI</a>.
+ Click the Files tab under the preview pictures, then select the latest
+version and click "Download with Manager". Mod Organizer should open up
+and start downloading it.</li>
+			<li>When it's been downloaded, it will appear in the Downloads tab on
+ the right. Double click to install it. Many mods have a program that
+will start to help you install it, often offering different options for
+the installation.</li>
+			<li>When it's been installed, check the box to the left of SkyUI's
+name in the main window to activate it (in Mod Organizer, installed ≠
+active. The mod will only act like it's installed if it's been
+activated. This makes it extremely easy to functionally install or
+uninstall a mod with a single click, one of the countless reasons why
+Mod Organizer is awesome).</li>
+			<li>In the dropdown list on the right, select SKSE (if it isn't
+selected already), then click Run (in order to run Skyrim with
+SKSE-requiring mods (such as SkyUI) installed, you have to run it
+through SKSE (in order to use SKSE, you have to run Skyrim through Mod
+Organizer, not Steam (otherwise your Mod Organizer mods won't be
+installed), so get used to doing so)) (I fucking love parentheses).</li>
+			<li>Skyrim should now open, and when you load a game (just run <code>coc riverwood</code>
+ in console from the main menu to quickly make a throwaway character)
+and open your inventory, you should see the much improved SkyUI
+inventory screen, instead of the crappy Bethesda console ported one.</li>
+			<li>As a small favour to the devs that spend hours of their time to make free mods for everyone, go back to the <a href="https://www.nexusmods.com/skyrim/mods/3863/?">SkyUI page</a>
+ and click Endorse near the top right. If you're feeling particularly
+generous, you can also donate through PayPal, but you probably want to
+spend some time playing the game to find out which mods are worth a
+donation.</li>
+		</ol>
+
+		Remember to endorse mods that you like as you go - it costs you
+nothing and helps recognize the authors' hard work. If you forget to
+endorse mods as you go, which I often do, you can go through your
+download history at <a href="https://www.nexusmods.com/skyrim/mods/history/?">this page</a> (once you've signed in) and endorse them by clicking the thumbs up icon next to each mod that you want to endorse.
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/vaultboy.png') }}"><br>
+			<i>Fallout Boy is my favourite band.</i>
+		</div>
+
+		<h2>Must-have mods</h2>
+		These mods should be in every loadout.
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/3863/?">SkyUI</a> (but you've probably already installed that).</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/19/?">Unofficial Skyrim Patch</a> - Mass bugfix patch for the base game (also get the Unofficial Patches for any DLC you have installed).</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/607/?">2k Texture Pack</a> - Better texture pack than Bethesda's High Resolution DLC. Not necessary if you're going to install an ENB.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/46465/?">Safety Load</a> - Prevents crashes and freezes.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/40706/?">OneTweak</a> - Bundles various tweaks and fixes, including borderless windowed and a fix for the alt-tab cursor bug.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/32505/?">Skyrim Project Optimization</a> - Improves framerate indoors.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/8655/?">Static Mesh Improvement Mod (SMIM)</a>
+ - Makes physics much less spastic (might be incompatible with certain
+other mods, but until you have a clash, keep it installed).</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/3863-3-1436880046.jpg') }}"><br>
+			<i>Why would you not use this. Seriously.</i>
+		</div>
+
+		<h1>Will's Recommended Mods</h1>
+		PLEASE do not for a SECOND think that these are the only mods worth
+getting. There are thousands of awesome mods, and you're doing yourself a
+ disservice if you don't spend some time browsing and trying some
+different mods. Everyone likes different things and the mods that I like
+ aren't necessarily the mods that you like. Again, make sure to read the
+ description and installation instructions for any mods you install;
+often they will be a straightforward install-and-activate, but many have
+ extra installation steps and mod dependencies that you'll have to
+resolve to get them to work.
+
+		<h2>Appearance mods</h2>
+		These mods improve Skyrim's looks, sounds, etc. Little to no gameplay
+impact, just making everything look dank. Note: These mods can be a
+minefield of compatibilities, so be careful when choosing what files to
+download and which options to choose when installing. When in doubt,
+read the mod's description. There are also often many alternatives for
+one function, eg. Realistic Lighting Overhaul vs. Enhanced Lights and FX
+ vs. Enhanced Lighting for ENB. The choice boils down to personal
+preference and compatibility with other mods - look up a /r/skyrimmods
+discussion if you're not sure which one to choose.
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/30936/?">RealVision ENB</a>
+ - ENBs provide the most drastic graphic changes with amazing visuals
+(in fact, I considered giving them their own section), but they're also
+the most performance hungry. There are lots of ENBs available, but
+RealVision is the most popular and has an installer that does a lot of
+work for you. Installing RealVision will take a fair bit of time and
+effort, and can be a daunting place to start out modding, but it will
+also involve installing a lot of things that you'll need to get
+eventually, additional graphics mods like Climates of Tamriel and
+Realistic Lighting Overhaul, and make your game look amazing while
+improving performance. If you get stuck or you're not sure what to do, <b>read the mod description!</b></li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/7638/?">Improved New Skyrim Shadows</a>
+ - This one can really push your system to its limits. Not a mod per se,
+ but rather a preset of some Skyrim.ini and SkyrimPrefs.ini settings to
+make shadows look <i>amazing</i>. Like, so much better than Ultra
+shadows. Ultra shadows are awful. This is the real deal. It will,
+however, make your CPU commit seppuku if you try to go for the highest
+settings with it. If you're installing this early on, make sure to leave
+ some spare FPS for later mods.</li>
+			<li><u>Weather mods</u> - There are lots of these, and you'll install
+ some of them in the process of installing RealVision. If you decide to
+not install RealVision, make sure that you install some weather mods,
+such as Climates of Tamriel.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/17802/?">Climates of Tamriel</a>*
+ - This is required by RealVision; I put this in the list to recommend
+that you try using darker nights - I personally like level 3 or 4. It's a
+ cool effect that adds a lot to the atmosphere of the game.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/29253/?">Remove Interior Fog</a> - Fairly minor change, but worth getting.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/9930/?">Revamped Exterior Fog</a> - More significant than above, also worth getting.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/32064/?">Immersive Saturation Boost</a> - Enriches colour without overdoing it.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/60/?">Enhanced Blood Textures</a> - Changes combat blood from a knifeful of strawberry jam to actual blood-looking textures.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/39759/?">Immersive Spells and Light</a>
+ - Makes your character emit light when you have a spell out, eg. Flames
+ -&gt; orange light, Healing -&gt; yellow light, etc. Very nice features
+ but unfortunately doesn't work in all areas due to unavoidable engine
+limitations.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/141/?">Skyrim Flora Overhaul</a>
+ - Makes plants look nice, but is fairly performance intensive -
+depending on the FPS that you're getting after installing an ENB, you
+might want to give this a miss. It can also be tricky to get the
+Skyrim.ini configuration just right, leading to the wrong plants being
+in the wrong places, making the flora look somewhat silly. When you do
+get it working correctly, however, it makes lush areas look amazing.</li>
+			<li><u>Official High Resolution Texture Pack</u> - I'm only mentioning this for the below mod.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/31255/?">Unofficial High Resolution Patch</a> - Only if you install the Official High Resolution Texture Pack.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/41076/?">Realistic Water Two</a>* - Greatly improves the look of water.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/18916/?">Lanterns of Skyrim</a>
+ - Adds some lanterns to roads and other relevant areas. Lanterns are
+only lit at night and go well with darker night options from Climates of
+ Tamriel.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/12110/?">Beautiful Whiterun</a>
+ - There are several takes on this by several people, but it's
+definitely worth having one if your character visits Whiterun a lot (and
+ who doesn't). A more performance-heavy but nicer looking alternative is
+ <a href="https://www.nexusmods.com/skyrim/mods/60196/?">A New Whiterun</a>. If you want a really lush and dense (and performance heavy) Whiterun, you can get TAVE Whiterun (see below).</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/17406/?">Towns and Villages Enhanced</a>
+ - Like Beautiful Whiterun, but for more cities as well as towns and
+villages. This is the small villages file, and there are others for
+Whiterun, Riften, etc. Be aware, however, that they can be pretty taxing
+ on framerate, and are probably why you're lagging in cities.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/28642/?">Ultimate HD Fire Effects</a> - Makes fire effects look much better and more realistic.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/43773/?">Audio Overhaul for Skyrim 2</a>
+ - I recommend this over its alternative Sounds of Skyrim purely because
+ Sounds of Skyrim has 3 parts that are actually quite difficult to track
+ down on the Nexus.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/51199/?">Wet Eyes</a>
+ - Makes your vision blurred underwater and adds a small effect when
+jumping into water to make underwater visuals less retardedly
+unrealistic and more "immersive" ☜(ﾟヮﾟ☜)</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/5603/?">2X Clothing Re-Mix</a> - High-res vanilla clothing texture replacer.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/28428/?">New Animation for Magic Casting</a> - I really like the spell stance from this mod - much better than vanilla.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/67478/?">Unbelievable Grass Two</a>
+ - Very nice looking grass, but can be performance heavy and require
+some ini tweaking to get right. An alternative that could be given the
+exact same description is <a href="https://www.nexusmods.com/skyrim/mods/60220/?">Verdant</a>.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/15703">Pretty Combat Animations</a>
+ - I genuinely can't remember what animation replacer(s) I use or how I
+configured them. The vanilla animations don't set a very high bar,
+though. I will also warn you, however, that a great deal of the
+replacements available in mods look even worse. Try this and/or <a href="https://www.nexusmods.com/skyrim/mods/34950/?">Immersive Animations</a>,
+ and see what you like. If you select something that you don't want,
+just reinstall the mod in Mod Organizer and overwrite files when
+prompted at the end.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/30164/?">Natural Grass Floor Texture</a> - Nice looking, easy to install.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/10753/?">Auto Unequip Ammo</a> - Solves a gripe that I think everyone had with the base game.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/35717/?">Belt-Fastened Quivers</a> - Moves quivers to the player's lower back. You'd be surprised how much better this looks.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/52612/?">Real Shelter</a> - Prevents rain and snow from falling through roofs and other overhangs.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/12525/?">Dynavision</a>
+ - Adds Dynamic Depth of Field to the game (objects significantly closer
+ or farther away than whatever the player is looking at go out of
+focus). The strength of the effect is configurable, and makes the whole
+game feel much more realistic and less like a game with a shitty engine.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/24352/?">Clanking Armor</a> - Fairly self-explanatory.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/32412/?">Silent Bards</a> - Okay, this one is entirely optional, but holy shit - I can only handle hearing Age of Aggression so many times.</li>
+		</ul>
+		*Recommended/required by RealVision, and therefore probably installed in the process of installing RealVision
+
+		<div class="pictureFrame">
+			<a href="https://www.reddit.com/r/SkyrimPorn/comments/3aukfy/the_early_bird/"><img src="{{ url_for('static', filename='skyrim_files/NRS9jDH.jpg') }}" title="Click to view high-res"></a><br>
+			<i>Daaaaaamn son. Click to view full-res.</i>
+		</div>
+
+		<h2>Player mods</h2>
+		These mods affect the player somehow. They're much more preferential
+than the graphics mods above (indeed, most of the rest of the
+recommendations are) since most are more of a modification rather than
+direct improvement, which may or may not be something you want.
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/68311/?">KS Hairdos</a> and/or <a href="https://www.nexusmods.com/skyrim/mods/10168/?">ApachiiSkyHair</a> - These are the two most popular hairstyle packs. They only add content, and obviously you don't <i>have</i>
+ to use any of them. I personally don't like most of ApachiiSkyHair's
+offering, as they all have really shiny textures and weaboo styles that
+look really out of place in Skyrim. KS Hairdos also supports FUCKING
+HAIR PHYSICS with a separate physics pack if <a href="https://www.nexusmods.com/skyrim/mods/53996/?">HDT Physics Extensions</a> is installed. If you're going to be playing a female character, you may also be interested in <a href="https://www.nexusmods.com/skyrim/mods/31797/?">Azar's Ponytail Hairstyles</a>,
+ which IMO have the most realistic looking hairstyles (though some of
+them are stupidly gravity-defying), but are obviously limited to
+ponytails, and a small selection at that.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/13722/?">The Eyes of Beauty</a> - A huge pack of custom eye textures.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/59192/?">Eyes of Aber</a> - Another custom iris pack with some extremely trippy textures.</li>
+			<li><u>Body replacers</u> - I didn't lead with a link because there
+isn't really a "get this one" for this category - the choice depends
+entirely on what you want. Almost every body replacer has both a nude
+and normally clothed (underwear) option that closely resembles the
+vanilla bodies with improved textures and meshes. Normally, the choice
+is given to you during installation, or in the Downloads section of the
+mod page. Assuming you don't want nude, it's up to you whether or not to
+ install the clothed versions for the improved textures and meshes. <b>Warning</b>:
+ As you may have predicted, the following mods' preview images are
+definitely NSFW. There are two popular female body replacers: <a href="https://www.nexusmods.com/skyrim/mods/2666/?">CBBE</a> and <a href="https://www.nexusmods.com/skyrim/mods/6709">UNP</a>.
+ CBBE has traditionally been way, way, way easier to install, more
+popular, and more widely supported, though UNP adherents will insist
+that it's the better and more realistic of the two, and I'm not going to
+ say they're wrong, because it's subjective. There's a decent discussion
+ of this in <a href="https://www.reddit.com/r/skyrimmods/comments/44i5d5/cbbe_vs_unp/">this /r/skyrimmods thread</a>.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/57859/?">Enhanced Camera</a> - The best 1st person camera improvement - shows the player's body in 1st person in a realistic looking way (think Halo 3).</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/23600/?">Player Headtracking</a>
+ - Makes the player's head turn to look at nearby objects of interest
+like NPCs do (3rd person only, doesn't move the camera). This is
+preference based, depending on which you find weirder - the player
+compulsively looking at people and things, or always staring straight
+ahead.</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/s6G8r2h.png') }}" style="height: 200px;"><br>
+			<i>Iris | Fade (Factory New)</i>
+		</div>
+
+		<h2>Gameplay mods</h2>
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/9557/?">Alternate Start: Live Another Life</a>
+ - One of the most simple yet significant mods IMO - all it does is
+plonk your character in your choice of alternate starts, completely
+removing the main quest (not quite - you can start it later if you want
+to). An absolute must, if only so that you don't have to sit through
+Helgen.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/59849/?">Perkus Maximus</a>
+ (a.k.a. PerMa) - Adds lots of new perks to make gameplay more
+interesting. I must admit that I haven't used this one much, but it's
+very popular.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/19381/?">More Perk Points/Dragonsouls to Perk Points</a> - A minor change that's especially worthwhile if you're using PerMa.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/49784/?">Equipping Overhaul</a> - This is a cool immersion mod that makes the way you equip and manage items more logical. Watch <a href="https://www.youtube.com/watch?v=OKBt1x_P1SA">Gopher's video on this mod</a> to see how it works.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/11163/?">Frostfall</a>
+ - A comprehensive, balanced, well-written, immersive take on
+temperature in Skyrim. Written by a very accomplished modder (Chesko),
+widely renowned, and one of the best things you can get for immersion in
+ Skyrim.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/68982/?">Realistic Needs and Diseases</a>
+ - Adds hunger, thirst, fatigue, and a few other such 'needs' to Skyrim.
+ I've had mixed success with this mod, with the stats never
+deteriorating at all over time for one of my characters, making the mod
+effectively useless. The fact that it's so popular makes me assume that
+I'm doing something wrong and the mod isn't fundamentally broken.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/9310/?">Invulnerable Horses</a> - Simple, straightforward. No need to be worrying about your horse during combat.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/1036/?">Lightweight Potions and Poisons</a>
+ - If you're a fan of the
+carry-all-of-your-possessions-in-your-back-pocket approach to Skyrim,
+this is worth getting. If you're going for realism, however, I'd give it
+ a miss, since it's an enabler of the
+carry-infinite-potions-and-become-effectively-invincible playstyle.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/18465/?">The Paarthurnax Dilemma</a> - Removes a pointless decision from the main quest.</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/aslal.png') }}"><br>
+			<i>You can pick any alternate start you want... As long as it's not the vanilla start.</i>
+		</div>
+
+		<h2>Item mods</h2>
+		<strike>Yeah, I don't use that many item mods.</strike> I found some while looking for things to put in this section. Now I use a few item mods.
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/27644/?">Immersive Weapons</a> - Adds lots of interesting new weapons to the Skyrim world.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/19733/?">Immersive Armors</a> - Same as above, but armors.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/28545/?">Ghosus Weapon Pack</a> - I haven't tried this, but I certainly will, as it looks really good.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/52700/?">Sword of the Ancient Tongues</a> - Pretty cool, very high-res sword.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/71912/?">Witcher-Style Sword Pack</a> - Several nice looking (but not very unique) swords. Apparently somewhat Witcheresque - I wouldn't know.</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/dOHKexB.jpg') }}"><br>
+			<i>Witchplate Armor from Immersive Armors.</i>
+		</div>
+
+		<h2>Interface mods</h2>
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/29624/?">RaceMenu</a>
+ - A hugely improved character creation screen. RaceMenu (and the
+inbuilt precache killer patch) are used by many other mods, so even
+ignoring the improvements to character creation, it's still worth
+getting as a framework.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/57873/?">Extended UI</a> - Makes various improvements to some menus in the game, most notably the skills menu and the console.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/12933/?">Extensible Follower Framework</a>
+ - The most actively supported follower mod, offering fairly typical
+improvements (including optional essential (that is, invincible)
+followers).</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/8348/?">House Map Markers</a> - Adds fast-travellable markers to your map for each of your houses. Simple, useful.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/4929/?">A Quality World Map</a> - Makes the map look a bit better.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/28170/?">Better MessageBox Controls</a> - Makes dialogue boxes more convenient/possible to control with a keyboard.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/27371/?">Better Dialogue Controls</a> - Same as above but for dialogue options.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/3222/?">iHUD</a> -
+ Made by Gopher (see Additional Resources) to hide elements of the HUD
+when they're not needed. Not a groundbreaking change, but it's nicer
+than you might think to have a clear screen when you're just walking
+around. I'd recommend looking through the options in MCM after
+installing, though, as I don't think the default configuration gets it
+quite right.</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/proto.png') }}"><br>
+			<i>I don't know what I can screenshot from the Interface section, so
+here's an actual interface prototype given to me by group members for a
+group assignment. At least we have the Report a Problem link.</i>
+		</div>
+
+		<h2>Real estate</h2>
+		I moved all of the existing location enhancers (such as Towns and
+Villages Enhanced) to the Appearance mods section, leaving this one...
+slightly bare. This is fine, though, because there's <a href="https://www.youtube.com/playlist?list=PLHddAVeCaLpaw5HIODtw745axXh_un9b7&amp;feature=view_all">this playlist of player home reviews</a>, so you don't even need me!
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/33661/?">Leaf Rest</a>
+ - Adds a new player house just next to Riverwood. Nice looking,
+surprisingly many bells and whistles. Might not be ideal due to low FPS
+in the area if you're using Towns and Villages Enhanced Riverwood and
+Skyrim Flora Overhaul.</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<!--<img src="https://www.nexusmods.com/Images/110/761838-1396976754.jpg" /><br/>-->
+			<img src="{{ url_for('static', filename='skyrim_files/33661-2-1391353343.jpg') }}"><br>
+			<i>Surprisingly lush for an icy tundra.</i>
+		</div>
+
+		<h2>Frameworks</h2>
+		Most of these mods don't do anything on their own, but a lot of mods
+require them. If you don't install them now and need them later, it's no
+ big deal; you'll just have to install them then. I like to get them out
+ of the way for ease of future modding, because even if you never use
+them, it doesn't really matter.
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/11811/?">Fore's New Idles</a>
+ (a.k.a. FNIS) - Allows mods to provide custom animations. This is an
+important one; any mod that adds custom animations needs this, and
+GenerateFNISForUsers.exe must be run EVERY TIME a mod with custom
+animations is installed or uninstalled (or, in Mod Organizer lingo,
+enabled or disabled). If you don't run GenerateFNISForUsers, there
+(usually) won't be any animations at all, and all actors will stand
+still with their arms held out to their sides. After you've installed
+FNIS in Mod Organizer, MO will <i>hopefully</i> automatically find
+GenerateFNISForUsers and add it to the executables dropdown in the top
+right of the window, making it much easier to run it. Otherwise, you
+should be able to manually add it to the list. Look up a tutorial if you
+ have trouble doing this.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/14884/?">Fus Ro D-oh</a>
+ - Prevents unvoiced dialogue lines from disappearing immediately. If a
+mod has dialogue lines that don't have an audio file associated with
+them (which a lot of mods do, because voice acting is expensive/time
+consuming/requires talent), the line will appear and then immediately
+disappear. Fus Ro D-oh prevents this by holding on the line for an
+approximated time depending on the length of the line, simulating there
+being an audio file playing and allowing the player to read the dialogue
+ line subtitle.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/49743/?">JContainers</a> - Allows the use of JSON in Papyrus scripts and improves compatibility with C++/Lua.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/58705/?">PapyrusUtil</a> - Adds some scripting functions.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/57046/?">UIExtensions</a> - Adds some special menu types, including a colour picker. Not to be confused with Extended UI, shown above.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/24020/?">Brawls Bug Patch</a> - Not really a framework, but some mods require it - and you might as well get it for the bugfix that it provides.</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/austria.jpg') }}"><br>
+			<i>Again, not sure what I can do for Frameworks. Have a nice photo of Austria.</i>
+		</div>
+
+		<h2>Dank memes</h2>
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/72491/?">Nicholas Cage</a>
+ - If you know any true sons and daughters of Skyrim, tell them to head
+to Windhelm. The One True God of Skyrim would like to see them. EDIT:
+HOW'D IT GET DELETED, HUH???</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/4376/?">Macho Chickens</a> - Official mod of <a href="https://reddit.com/r/birdswitharms">/r/birdswitharms</a>.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/61807/?">Project MLG</a> - Adds a dialogue option to 1v1 a scrub. Possibly does some other things as well.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/73996/?">Skyrim belongs to the Gourds</a> - Adds a gourd race. ¯\_(ツ)_/¯</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/cage.jpg') }}"><br>
+			<i>Killing me won’t bring back your god damn sweet roll!</i>
+		</div>
+
+		<h2>Misc.</h2>
+		<ul>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/64905/?">AddItemMenu</a>
+ - Gives you a list of mods, then a "container" with all items added by
+whatever mod you selected. Very, very useful for testing out new mods.</li>
+			<li><a href="https://www.nexusmods.com/skyrim/mods/64948/?">MainMenu</a> - Makes a couple of improvements to the main menu (most notably allowing sorting of saves by character).</li>
+		</ul>
+
+		<h1>Get more mods!</h1>
+		The mods that I've listed here are a good start, but you should spend
+some time exploring on your own! After all, no one knows what you want
+better than you.
+		<ul>
+			<li>Nexus - <a href="https://www.nexusmods.com/skyrim/mods/top/?">Top Mods All Time</a></li>
+			<li>Nexus - <a href="https://www.nexusmods.com/skyrim/mods/categories/?">Categories</a> (results sorted by popularity)</li>
+			<li><a href="https://reddit.com/r/skyrimmods">/r/skyrimmods</a> sidebar - Has lots of very useful information, such as a (much more detailed) Beginner's Guide and list of Essential Mods.</li>
+			<li><a href="https://skyrimgems.com/">Skyrim G.E.M.S.</a> - Basically
+ a collection of really good improvement-focused mods. Take a look
+through it for anything I've missed that looks good (there will be
+plenty).</li>
+			<li><a href="http://www.gizardthelizardwizard.com/">Gizard the Lizard Wizard's Mod List</a> - Pretty big categorized list of quality mods.</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<!--<img src="https://staticdelivery.nexusmods.com/mods/110/images/19799-1-1341267863.jpg" /><br/>-->
+			<img src="{{ url_for('static', filename='skyrim_files/whiterun.jpg') }}"><br>
+			<i>It's ACTUALLY like a whole new game!</i>
+		</div>
+
+		<h1>Additional resources</h1>
+		This guide has just scrached the surface of the first scratch into the
+ surface of Skyrim modding, and it only gets awesomer from here.
+		<ul>
+			<li><a href="https://www.youtube.com/user/GophersVids">Gopher</a> has
+ made videos and tutorials on almost every topic imaginable in the realm
+ of Bethesda modding, and is a mod author himself and generally very
+awesome guy. If you query Google about a problem you're having, chances
+are one of his videos will be the first result. He made a very
+comprehensive intro to modding series, which can be found <a href="https://www.youtube.com/playlist?list=PLE7DlYarj-DdhDG41roBVJfNCqvO5MmKP">here</a>.
+ IMO it's quite slow, and unfortunately uses Nexus Mod Manager instead
+of Mod Organizer, but you certainly won't miss any important details.</li>
+			<li><a href="https://reddit.com/r/skyrimmods">/r/skyrimmods</a> is a really good community for discussion of new and best mods.</li>
+			<li><a href="https://www.reddit.com/r/skyrimmods/comments/5axvif/guide_in_light_of_recent_events_and_because_with/">This /r/skyrimmods post</a> goes through setting up a modding environment the correct and thorough way, and covers a lot of stuff that I didn't.</li>
+			<li><a href="https://www.pcgamer.com/best-skyrim-mods/">This PC Gamer article</a> - Without looking through it too thoroughly, this article seems to have a good categorized list of mods to try.</li>
+			<li><a href="https://modpicker.com/">Mod Picker</a> - This is an
+indev project that's pretty hyped on /r/skyrimmods. It's basically going
+ to be PCPartPicker but for Skyrim mods. I'm necessarily skeptical
+because of what it's promising and how complicated mod interactions can
+be, but I'm also not going to judge it before I see it.</li>
+			<li>Me. Hi! If you have any questions, just ask.</li>
+		</ul>
+
+		<div class="pictureFrame">
+			<img src="{{ url_for('static', filename='skyrim_files/ep.jpg') }}"><br>
+			<i>Then download a mod that fixes the crash.</i>
+		</div>
+
+
+</body></html>
