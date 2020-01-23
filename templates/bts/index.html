@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Better Than Skype{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bts.css') }}">
+{% endblock %}
+
+{% block body %}
+<iframe id="discord-widget" src="https://discordapp.com/widget?id=77041788564545536&theme=dark" allowtransparency="true" frameborder="0"></iframe>
+
+<script type="text/javascript">
+    window.setInterval("reloadWidget();", 1000 * 60);
+
+    function reloadWidget() {
+        var frame = document.getElementById("discord-widget");
+        frame.src = frame.src;
+    }
+</script>
+{% endblock %}

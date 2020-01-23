@@ -1,0 +1,15 @@
+body, html {
+    /* centering logic */
+    height: 100%;
+    display: grid;
+}
+
+#discord-widget {
+    /* centering logic */
+    margin: auto;
+
+    /* size and location */
+    width: 600px;
+    margin-top: 0; margin-bottom: 0;
+    padding: 20px;
+}
