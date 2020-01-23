@@ -1,15 +1,19 @@
 body, html {
-    /* centering logic */
+    width: 100%;
     height: 100%;
-    display: grid;
 }
 
-#discord-widget {
-    /* centering logic */
-    margin: auto;
+#wrapper {
+    height: 100%;
+    width: 100%;
 
-    /* size and location */
+    /* centering logic */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#widget {
     width: 600px;
-    margin-top: 0; margin-bottom: 0;
-    padding: 20px;
+    height: calc(100% - 40px);
 }
