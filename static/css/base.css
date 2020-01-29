@@ -1,6 +1,41 @@
+:root {
+    --bg-dark: #4C4C4C;
+    --bg-darker: #3C3C3D;
+    --bg-darkest: #303030;
+    --fg-plain: #F5F5F5;
+    --fg-highlight: #33B5E5;
+    --fg-highlight-dark: #2D9FC9;
+}
+
+/* general global styling */
+
 body {
-	background-color: #4C4C4C;
-	color: #33B5E5;
-	font-family: 'Open Sans', sans-serif;
-	margin: 0;
+    background-color: var(--bg-dark);
+    color: var(--fg-plain);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+::selection {
+    background: var(--fg-plain);
+}
+
+/* tweak link styling to my liking */
+
+a:link, a:visited {
+    color: currentColor;
+}
+
+a:hover {
+    color: var(--fg-highlight);
+}
+
+a:active {
+    color: var(--fg-highlight-dark);
+}
+
+/* highlight headers */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--fg-highlight);
 }

@@ -12,7 +12,13 @@ app.register_blueprint(bts)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    pages = [
+        { 'title': 'lemmy',             'location': '/lemmy' },
+        { 'title': 'discord server',    'location': '/bts' },
+        { 'title': 'personal site',     'location': 'https://halbrd.com' },
+        { 'title': 'professional site', 'location': 'https://will.sx' },
+    ]
+    return render_template('index.html', pages=pages)
 
 if __name__ == '__main__':
     # debug mode - not for production
