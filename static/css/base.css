@@ -20,6 +20,11 @@ body {
     background: var(--fg-plain);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--fg-highlight);
+    font-weight: 400;  /* 400 is normal weight */
+}
+
 /* normal link styling */
 
 a:link, a:visited {
@@ -47,10 +52,4 @@ nav a:hover {
 
 nav a:active {
     color: var(--fg-highlight-dark);
-}
-
-/* highlight headers */
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--fg-highlight);
 }
