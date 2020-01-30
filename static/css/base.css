@@ -20,7 +20,7 @@ body {
     background: var(--fg-plain);
 }
 
-/* tweak link styling to my liking */
+/* normal link styling */
 
 a:link, a:visited {
     color: currentColor;
@@ -31,6 +31,21 @@ a:hover {
 }
 
 a:active {
+    color: var(--fg-highlight-dark);
+}
+
+/* navigation link styling */
+
+nav a:link, a:visited {
+    text-decoration: none;
+    color: var(--fg-plain);
+}
+
+nav a:hover {
+    color: var(--fg-highlight);
+}
+
+nav a:active {
     color: var(--fg-highlight-dark);
 }
 
