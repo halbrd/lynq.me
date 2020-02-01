@@ -16,6 +16,10 @@ section {
     padding-right: 35px;
 
     margin: 10px;
+
+    /* text */
+    font-size: 18px;
+    text-align: center;
 }
 
 h1, h2 {
