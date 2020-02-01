@@ -1,5 +1,9 @@
-:root {
-    --emote-size: 64px;
+.emotes-section {
+    --emoter-size: 64px;
+}
+
+.stickers-section {
+    --emoter-size: 96px;
 }
 
 main {
@@ -39,6 +43,10 @@ h2 {
     font-size: 32px;
 }
 
+h3 {
+    font-size: 24px;
+}
+
 hr {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -61,21 +69,21 @@ nav a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .emoter-grid figure {
     margin: 5px;
 
-    width: calc(2 * var(--emote-size));
-    height: calc(2 * var(--emote-size));
+    width: calc(1.8 * var(--emoter-size));
+    height: calc(2 * var(--emoter-size));
 }
 
 .emoter-grid figure .img-wrapper {
     /* set to emote size */
-    width: var(--emote-size);
-    height: var(--emote-size);
+    width: var(--emoter-size);
+    height: var(--emoter-size);
 
     /* center self */
     margin-left: auto;
@@ -90,19 +98,10 @@ nav a {
 .emoter-grid figure img {
     width: auto;
     height: auto;
-    max-width: var(--emote-size);
-    max-height: var(--emote-size);
-}
-
-.emoter-grid figure figcaption {
-    /* word-break: break-all; */
+    max-width: var(--emoter-size);
+    max-height: var(--emoter-size);
 }
 
 .emoter-grid figure figcaption span {
     display: inline-block
-}
-
-
-body * {
-    /* outline: solid white 1px; */
 }

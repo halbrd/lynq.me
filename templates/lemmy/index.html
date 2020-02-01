@@ -39,7 +39,7 @@
         <p>Send Lemmy "<code>/help</code>" in a direct message</p>
     </section>
     <a name="emotes"></a>
-    <section>
+    <section class="emotes-section">
         <h2>Emotes</h2>
         <hr>
         <div class="emoter-grid">
@@ -56,11 +56,48 @@
         </div>
     </section>
     <a name="stickers"></a>
-    <section>
+    <section class="stickers-section">
         <h2>Stickers</h2>
         <hr>
-        <!--  -->
-    </section>
+        <div class="emoter-grid">
+            {% for sticker in stickers_normal %}
+            <figure>
+                <div class="img-wrapper">
+                    <img src="{{ sticker.url }}" alt="{{ sticker.name|join('') }}">
+                </div>
+                <figcaption>
+                    {% for chunk in sticker.name %}<span>{{ chunk }}</span>{% endfor %}
+                </figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+        <h3>League of Legends Facebook Stickers</h3>
+        <div class="emoter-grid">
+            {% for sticker in stickers_lolfb %}
+            <figure>
+                <div class="img-wrapper">
+                    <img src="{{ sticker.url }}" alt="{{ sticker.name|join('') }}">
+                </div>
+                <figcaption>
+                    {% for chunk in sticker.name %}<span>{{ chunk }}</span>{% endfor %}
+                </figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+        <h3>eSports Teams</h3>
+        <div class="emoter-grid">
+            {% for sticker in stickers_teams %}
+            <figure>
+                <div class="img-wrapper">
+                    <img src="{{ sticker.url }}" alt="{{ sticker.name|join('') }}">
+                </div>
+                <figcaption>
+                    {% for chunk in sticker.name %}<span>{{ chunk }}</span>{% endfor %}
+                </figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+    </section class="stickers-section">
     <a name="company"></a>
     <section>
         <h2>Company</h2>
