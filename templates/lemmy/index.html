@@ -42,7 +42,18 @@
     <section>
         <h2>Emotes</h2>
         <hr>
-        <!--  -->
+        <div class="emoter-grid">
+            {% for emote in emotes %}
+            <figure>
+                <div class="img-wrapper">
+                    <img src="{{ emote.url }}" alt="{{ emote.name|join('') }}">
+                </div>
+                <figcaption>
+                    {% for chunk in emote.name %}<span>{{ chunk }}</span>{% endfor %}
+                </figcaption>
+            </figure>
+            {% endfor %}
+        </div>
     </section>
     <a name="stickers"></a>
     <section>

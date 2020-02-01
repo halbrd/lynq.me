@@ -1,3 +1,7 @@
+:root {
+    --emote-size: 64px;
+}
+
 main {
     max-width: 1200px;
     margin-left: auto;
@@ -51,4 +55,54 @@ nav a {
     margin-right: 10px;
 
     font-size: 24px;
+}
+
+.emoter-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emoter-grid figure {
+    margin: 5px;
+
+    width: calc(2 * var(--emote-size));
+    height: calc(2 * var(--emote-size));
+}
+
+.emoter-grid figure .img-wrapper {
+    /* set to emote size */
+    width: var(--emote-size);
+    height: var(--emote-size);
+
+    /* center self */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* center contents */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emoter-grid figure img {
+    width: auto;
+    height: auto;
+    max-width: var(--emote-size);
+    max-height: var(--emote-size);
+}
+
+.emoter-grid figure figcaption {
+    /* word-break: break-all; */
+}
+
+.emoter-grid figure figcaption span {
+    display: inline-block
+}
+
+
+body * {
+    /* outline: solid white 1px; */
 }
