@@ -7,6 +7,7 @@
 }
 
 main {
+    /* main column layout */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -52,6 +53,7 @@ hr {
     margin-bottom: 20px;
 }
 
+/* intra-page links */
 nav {
     display: flex;
     justify-content: center;
@@ -66,6 +68,8 @@ nav a {
     font-size: 24px;
 }
 
+/* grids for emoters */
+
 .emoter-grid {
     display: flex;
     flex-direction: row;
@@ -75,10 +79,11 @@ nav a {
 }
 
 .emoter-grid figure {
-    margin: 5px;
-
+    /* layout of the overall space for the emoter */
     width: calc(1.8 * var(--emoter-size));
     height: calc(2 * var(--emoter-size));
+
+    margin: 5px;
 }
 
 .emoter-grid figure .img-wrapper {
@@ -104,6 +109,7 @@ nav a {
 }
 
 .emoter-grid figure figcaption span {
+    /* this makes the text wrap between spans, preserving logical units of text */
     display: inline-block
 }
 
@@ -127,6 +133,7 @@ nav a {
     align-items: center;
 }
 
+/* employee name */
 .company-section figure h1 {
     font-size: 28px;
     color: currentColor;
@@ -134,6 +141,7 @@ nav a {
     margin-bottom: 5px;
 }
 
+/* employee title */
 .company-section figure h2 {
     font-size: 16px;
     color: currentColor;
@@ -141,6 +149,7 @@ nav a {
     margin-bottom: 15px;
 }
 
+/* employee pic */
 .company-section figure img {
     width: 200px;
     height: 200px;
@@ -150,14 +159,17 @@ nav a {
     margin-bottom: 15px;
 }
 
+/* employee quote */
 .company-section figure figcaption {
     font-size: 18px;
 }
 
+/* special case for UncleLawyer's text */
 .company-section figure .small {
     font-size: 11px;
 }
 
+/* center the president */
 .company-section .president {
     margin-left: auto;
     margin-right: auto;
