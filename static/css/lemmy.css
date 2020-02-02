@@ -14,7 +14,7 @@ main {
 
 section {
     /* background dark shade */
-    background-color: var(--bg-darkest);
+    background-color: var(--bg-darker);
     border-radius: 5px;
 
     /* spacing */
@@ -104,4 +104,68 @@ nav a {
 
 .emoter-grid figure figcaption span {
     display: inline-block
+}
+
+.company-section figure {
+    color: #FFD700;
+
+    /* size and layout */
+    width: 230px;
+    height: 400px;
+
+    padding: 15px;
+    border-radius: 5px;
+
+    background-color: var(--bg-darkest);
+
+    margin: 0;
+    margin-bottom: 20px;
+
+    /* layout of contents */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company-section figure h1 {
+    font-size: 28px;
+    color: currentColor;
+
+    margin-bottom: 5px;
+}
+
+.company-section figure h2 {
+    font-size: 16px;
+    color: currentColor;
+
+    margin-bottom: 15px;
+}
+
+.company-section figure img {
+    width: 200px;
+    height: 200px;
+
+    border: solid currentColor 3px;
+
+    margin-bottom: 15px;
+}
+
+.company-section figure figcaption {
+    font-size: 18px;
+}
+
+.company-section figure .small {
+    font-size: 11px;
+}
+
+.company-section .president {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.employees {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

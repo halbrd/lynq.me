@@ -97,12 +97,27 @@
             </figure>
             {% endfor %}
         </div>
-    </section class="stickers-section">
+    </section>
     <a name="company"></a>
-    <section>
-        <h2>Company</h2>
+    <section class="company-section">
+        <h2>The Faces of Lemmy Pty. Ltd.</h2>
         <hr>
-        <!--  -->
+        <figure class="president">
+            <h1>halbrd</h1>
+            <h2>President</h2>
+            <img src="{{ url_for('static', filename='img/lemmy-halbrd.png') }}" alt="halbrd">
+            <figcaption>I chose something different. I chose the impossible. I chose... Lemmy.</figcaption>
+        </figure>
+        <div class="employees">
+            {% for employee in employees %}
+            <figure>
+                <h1>{{ employee.name }}</h1>
+                <h2>{{ employee.title }}</h2>
+                <img src="{{ url_for('static', filename='img/' + employee.image) }}" alt="{{ employee.name }}">
+                <figcaption class="{{ employee.quote_class }}">"{{ employee.quote }}"</figcaption>
+            </figure>
+            {% endfor %}
+        </div>
     </section>
 </main>
 {% endblock %}

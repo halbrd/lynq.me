@@ -5,6 +5,17 @@ import os
 
 lemmy = Blueprint('lemmy', __name__)
 
+employees = [
+    { 'name': 'KunhaiG', 'title': 'Python Amateur', 'image': 'lemmy-kunhaig.png', 'quote': 'Team?', },
+    { 'name': 'LuckyLachy', 'title': 'Executive Memeographer', 'image': 'lemmy-luckylachy.png', 'quote': 'You know that saying that there are no bad questions? Well, there are, and this is one of them.', },
+    { 'name': 'Chesty', 'title': 'Memeographer', 'image': 'lemmy-chesty.png', 'quote': '[Crackling]', },
+    { 'name': 'Dragons_Ire', 'title': 'Executive Contractor', 'image': 'lemmy-dragonsire.png', 'quote': 'I have trouble following basic instructions.', },
+    { 'name': 'UncleLawyer', 'title': 'Legal Counsel', 'image': 'lemmy-unclelawyer.png', 'quote_class': 'small', 'quote': 'Qualified to provide legal advice, but only with supervision and through a law firm. This does not constitute legal advice with respect to the legality of providing legal advice. If you have any legal questions, you should consult a legal practicioner.', },
+    { 'name': 'RikerZZZ', 'title': 'Assistant Creative Advisor', 'image': 'lemmy-rikerzzz.png', 'quote': 'What\'s the circumstances?', },
+    { 'name': 'HotBotGG', 'title': 'Assistant Lemmy', 'image': 'lemmy-hotbotgg.png', 'quote': 'Mafia is love. Mafia is life.', },
+    { 'name': 'Your Name Here', 'title': 'Excited New Recruit', 'image': 'lemmy-scott.png', 'quote': 'We\'re Hiring!', },
+]
+
 @lemmy.route('/lemmy/')
 def index():
 
@@ -63,4 +74,5 @@ def index():
         stickers_normal=stickers_normal,
         stickers_lolfb=stickers_lolfb,
         stickers_teams=stickers_teams,
+        employees=employees,
     )
