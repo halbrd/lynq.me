@@ -56,6 +56,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -118,8 +119,7 @@ nav a {
 
     background-color: var(--bg-darkest);
 
-    margin: 0;
-    margin-bottom: 20px;
+    margin: 8px;
 
     /* layout of contents */
     display: flex;
@@ -167,5 +167,5 @@ nav a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
