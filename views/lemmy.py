@@ -48,6 +48,7 @@ def index():
     def expand_emoter(emoter):
         return {
             'name': emoter_filename_to_chunks(emoter['name']),
+            # TODO: resize these images and cache them, to save bandwidth
             'url': f'https://raw.githubusercontent.com/halbrd/Lemmy/master/' + emoter['path'],
         }
 
