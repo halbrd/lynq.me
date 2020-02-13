@@ -21,13 +21,13 @@ def index():
 
     # get list of emotes and stickers from Github
     emotes = requests.get(
-        'https://api.github.com/repos/halbrd/Lemmy/contents/lemmy-2/static/Emoters/emote',
+        'https://api.github.com/repos/halbrd/Lemmy/contents/static/Emoters/emote',
         headers={'Authorization': 'token ' + os.environ['LYNQME_GITHUB_TOKEN']}
     ).json()
     emotes = sorted(emotes, key=lambda emote: emote['name'].lower())
 
     stickers = requests.get(
-        'https://api.github.com/repos/halbrd/Lemmy/contents/lemmy-2/static/Emoters/sticker',
+        'https://api.github.com/repos/halbrd/Lemmy/contents/static/Emoters/sticker',
         headers={'Authorization': 'token ' + os.environ['LYNQME_GITHUB_TOKEN']}
     ).json()
     stickers = sorted(stickers, key=lambda sticker: sticker['name'].lower())
